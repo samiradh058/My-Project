@@ -1,0 +1,959 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* First Page */
+.main-container {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+    url(Images/bg.jpg), center no-repeat;
+  background-size: cover;
+}
+
+.btns {
+  display: flex;
+  justify-content: end;
+  padding-right: 40px;
+  padding-top: 50px;
+}
+
+.btn {
+  width: 170px;
+  padding: 10px 15px;
+  margin-right: 20px;
+  border-radius: 50px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  outline: none;
+  cursor: pointer;
+  color: #fff;
+  border: 2px solid tomato;
+  transition: transform 0.3s;
+}
+
+.login-btn {
+  background-color: tomato;
+}
+
+.signup-btn {
+  background-color: transparent;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.banner-text {
+  margin-top: 40px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.banner-text h1 {
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 72px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  white-space: nowrap;
+}
+
+.banner-text p {
+  color: #fff;
+  font-family: "Josefin sans", sans-serif;
+  font-size: 40px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-align: right;
+}
+
+/* Forms */
+.form-container {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+.disable {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  width: 400px;
+  background: linear-gradient(rgba(148, 42, 42, 0.8), rgba(185, 129, 129, 0.6)),
+    url(Images/bg.jpg) center no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+.display {
+  opacity: 1;
+  visibility: visible;
+}
+
+.x-btn {
+  position: absolute;
+  right: 20px;
+  font-size: 50px;
+  color: #222;
+  cursor: pointer;
+}
+
+.form-header {
+  text-align: center;
+  margin: 80px 0 150px 0;
+  color: #fff;
+}
+
+.form-header h1 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 40px;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+.form-header h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 25px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-group {
+  margin-top: 10px;
+  position: relative;
+}
+
+.input-group input {
+  width: 250px;
+  padding: 15px 15px 15px 50px;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.6);
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 200;
+}
+
+.input-group i {
+  position: absolute;
+  top: 13px;
+  left: 17px;
+  font-size: 18px;
+  color: #aaa;
+}
+
+.form button {
+  width: 300px;
+  padding: 12px;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  background-color: #d867d8;
+  color: #fff;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin: 30px 0 50px 0;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.form button:active {
+  transform: translateY(0);
+}
+
+/* Blockchain Page After Login*/
+
+.main-page {
+  width: 100%;
+  height: 100vh;
+}
+
+.hide-page {
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+}
+
+.hamburger-menu {
+  width: 3.5rem;
+  height: 3.5rem;
+  position: absolute;
+  top: 10rem;
+  left: 2rem;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.lines {
+  width: 60%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.line-ham {
+  width: 100%;
+  height: 0.2rem;
+  background-color: #fff;
+  border-radius: 0.2rem;
+}
+
+.show-page {
+  opacity: 1;
+  visibility: visible;
+}
+
+.top-navbar {
+  background: linear-gradient(
+    to right,
+    rgb(15, 24, 44),
+    rgb(11, 51, 82),
+    rgb(18, 103, 175),
+    rgb(23, 89, 218),
+    rgb(18, 103, 175),
+    rgb(11, 51, 82),
+    rgb(15, 24, 44)
+  );
+  text-align: center;
+}
+
+.top-navbar p {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+  font-family: "Josefin Sans", sans-serif;
+  padding: 10px 0 10px 0;
+}
+
+.navbar {
+  background-color: rgb(44, 61, 97);
+  display: flex;
+  flex-direction: row;
+  padding: 24px 0;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  margin-left: 32px;
+}
+
+.logo i {
+  color: #3b80f7;
+  font-size: 24px;
+  margin-right: 16px;
+}
+
+.logo h1 {
+  color: #fff;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 28px;
+  font-weight: 1000;
+}
+
+.logo h1 span {
+  color: rgb(157, 162, 167);
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  margin-left: 72px;
+}
+
+.nav-item {
+  list-style: none;
+}
+
+.nav-link {
+  color: #d8d5d5;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+  margin: 0 6px;
+  text-decoration: none;
+  background-color: transparent;
+  padding: 8px;
+}
+
+.nav-link:hover {
+  color: #d8d5d5;
+  background-color: rgba(147, 160, 189, 0.2);
+  border-radius: 4px;
+}
+
+.nav-right {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: 32px;
+  align-items: center;
+}
+
+.nav-right .fa-ellipsis {
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.navbar .search {
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  margin-right: 0.6rem;
+}
+
+.three-dots {
+  margin-right: 1rem;
+}
+
+.search-input {
+  width: 16rem;
+  height: 2.5rem;
+  padding-left: 2.8rem;
+  letter-spacing: 0.1rem;
+  font-size: 1rem;
+  background-color: aliceblue;
+  border: none;
+  outline: none;
+  border-radius: 5rem;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s;
+}
+
+.change .search-input {
+  transform: scaleX(1);
+}
+
+.navbar .search i {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: #fff;
+  position: absolute;
+  right: 14rem;
+}
+
+.change.search i {
+  color: #555;
+  right: 27rem;
+  font-size: 1.5rem;
+  pointer-events: none;
+  transform: scale(0.8);
+}
+
+.nav-right .rateus {
+  border: solid #fff 2px;
+  background: transparent;
+  padding: 10px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 16px;
+  font-family: "Josefin Sans", sans-serif;
+  margin-right: 1.2rem;
+  font-weight: 400;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.nav-right .quit {
+  border: solid #fff 2px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  color: rgb(44, 61, 97);
+  font-size: 16px;
+  font-family: "Josefin Sans", sans-serif;
+  margin-right: 16px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.nav-right .quit:hover {
+  background-color: rgb(238, 175, 175);
+  border: solid rgb(238, 175, 175) 2px;
+}
+
+.nav-right .fa-ellipsis:hover {
+  background-color: rgba(202, 182, 182, 0.1);
+}
+
+.line {
+  border: solid rgb(255, 255, 255) 1px;
+}
+
+.options-three {
+  position: absolute;
+  list-style: none;
+  background-color: #fff;
+  border-radius: 12px;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 900;
+  margin-top: 12px;
+  font-size: 18px;
+  line-height: 1.8rem;
+  padding: 12px;
+  transform: translateX(-12px);
+  opacity: 0;
+  visibility: none;
+  z-index: 1;
+}
+
+.options-three .opt {
+  text-decoration: none;
+  padding: 8px 54px 8px 8px;
+  background-color: transparent;
+  border-radius: 6px;
+}
+
+.options-three .opt:hover {
+  background-color: rgba(202, 182, 182, 0.3);
+}
+
+.options-three .opt:active {
+  background-color: rgb(79, 79, 252);
+  color: #fff;
+}
+
+.rate-box {
+  position: absolute;
+  z-index: 1;
+  right: 1rem;
+  top: 7rem;
+  background-color: #fff;
+  padding: 2rem 3rem 1rem 3rem;
+  border-radius: 1rem;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.fa-star {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font-size: 2rem;
+  color: rgb(216, 216, 27);
+  z-index: 1;
+}
+
+.rate-box h1 {
+  font-family: "Josefin Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.8rem;
+}
+
+.rate-box h1 span {
+  font-size: 2.5rem;
+  margin-top: -1.2rem;
+}
+
+.rate-box p {
+  font-family: "Josefin Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.rate-box ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.list-emoji .emo {
+  color: rgb(141, 131, 151);
+  padding: 0 0.6rem;
+  font-size: 1.6rem;
+}
+
+.list-emoji .emo:hover {
+  color: rgb(216, 216, 27);
+  scale: 1.4;
+}
+
+.skip {
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+  color: blue;
+  margin-top: 1.4rem;
+  cursor: pointer;
+}
+
+.make-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/*Main Body Page of After Logging*/
+
+.body-of-mainpage {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(44, 61, 97),
+    rgb(11, 51, 82),
+    rgb(18, 103, 175),
+    rgba(211, 79, 182)
+  );
+  padding: 8rem 16rem 12rem;
+  position: relative;
+}
+
+.heading h1 {
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 3.2rem;
+  font-weight: bolder;
+  letter-spacing: -1px;
+  margin-bottom: 2rem;
+}
+
+.heading h3 {
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 550;
+  letter-spacing: -1px;
+  margin-bottom: 2rem;
+}
+
+.search-field {
+  width: 50%;
+  margin-right: 3%;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.search-field:focus {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  outline: none;
+  padding: 0 1rem;
+  font-size: 1.2rem;
+}
+
+.search-field::placeholder {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding-left: 1rem;
+}
+
+.main-search {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: rgb(44, 61, 97);
+  font-weight: 700;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+}
+
+.gif-img {
+  position: absolute;
+  cursor: pointer;
+  bottom: 4rem;
+  right: 6rem;
+}
+
+.gif {
+  width: 60px;
+  height: 60px;
+  border-radius: 5rem;
+}
+
+.hover-text {
+  position: absolute;
+  cursor: pointer;
+  bottom: 0.4rem;
+  right: -2.8rem;
+  white-space: nowrap;
+  text-decoration: none;
+  color: #fff;
+  border: 2px solid black;
+  padding: 0.8rem;
+  border-radius: 2rem;
+  background-color: red;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.5rem;
+  opacity: 0;
+}
+
+.gif-img:hover .gif {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.gif-img:hover .hover-text {
+  opacity: 1;
+  transition: 1s;
+}
+
+/* Blockchains Blocks */
+
+.block-options {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.opt {
+  margin-top: -2rem;
+  z-index: 1;
+  background-color: #fff;
+  padding: 1.2rem;
+  border-radius: 0.6rem;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.first-row .block-image {
+  float: left;
+  margin-right: 4rem;
+  font-size: 2.2rem;
+}
+
+.first-row .right-block {
+  float: right;
+  display: flex;
+  flex-direction: row;
+}
+
+.buy {
+  background-color: rgba(0, 123, 255, 0.3);
+  color: rgb(111, 0, 255);
+  font-weight: 500;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  margin-right: 1rem;
+  transition: all 0.3s;
+}
+
+.buy:hover {
+  background-color: rgb(42, 42, 248);
+  color: #fff;
+}
+
+.trade {
+  background-color: rgba(40, 167, 69, 0.3);
+  color: green;
+  font-weight: 500;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+}
+
+.trade:hover {
+  background-color: green;
+  color: #fff;
+}
+
+.block-name {
+  display: block;
+  font-size: 1.4rem;
+  margin-top: 4rem;
+}
+
+.block-name span {
+  color: #555;
+  margin-left: 0.2rem;
+  letter-spacing: -1px;
+}
+
+.value {
+  display: flex;
+  font-size: 1.1rem;
+  margin-top: 0.8rem;
+}
+
+.dollars {
+  margin-right: 3rem;
+}
+
+/* Format change */
+
+.hide {
+  display: none;
+}
+
+.x-button {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: fit-content;
+  padding: 0.8rem 0.2rem 0.8rem 0rem;
+}
+
+.x-line {
+  width: 2.5rem;
+  height: 0.4rem;
+  background-color: rgb(102, 19, 235);
+  border-radius: 0.2rem;
+}
+
+.x-line-1 {
+  transform: rotate(-45deg) translateY(0.3rem);
+}
+
+.x-line-2 {
+  transform: rotate(45deg) translateY(-0.3rem);
+}
+
+.change-format {
+  width: 100%;
+  height: 100vh;
+  background-color: #ddd;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: grid;
+  grid-template-columns: 4rem 1fr 2rem;
+  grid-template-rows: 4rem 1fr 2rem;
+}
+
+.nav-menu {
+  list-style: none;
+  grid-column: 2/3;
+  grid-row: 2/3;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 1rem;
+}
+
+.nav-menu-link {
+  text-decoration: none;
+  background-color: #225cc7;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-menu-link:hover {
+  transform: scale(1.01);
+  background-color: #2156b9;
+}
+.nav-menu-item:nth-child(1) {
+  grid-column: 1/3;
+  grid-row: 1/3;
+}
+
+.nav-menu-item:nth-child(2) {
+  grid-column: 3/5;
+  grid-row: 1/3;
+}
+
+.nav-menu-item:nth-child(3) {
+  grid-column: 5/-1;
+  grid-row: 1/2;
+}
+
+.nav-menu-item:nth-child(4) {
+  grid-column: 5/6;
+  grid-row: 2/3;
+}
+
+.nav-menu-item:nth-child(5) {
+  grid-column: 6/-1;
+  grid-row: 2/3;
+}
+
+.nav-menu-item:nth-child(6) {
+  grid-column: 1/5;
+  grid-row: 3/-1;
+}
+
+.nav-menu-item:nth-child(7) {
+  grid-column: 5/-1;
+  grid-row: 3/4;
+}
+
+.nav-menu-item:nth-child(8) {
+  grid-column: 5/6;
+  grid-row: 4/-1;
+}
+
+.nav-menu-item:nth-child(9) {
+  grid-column: 6/-1;
+  grid-row: 4/-1;
+}
+
+/* Todo app */
+
+.todo-icon {
+  position: absolute;
+  right: 1.5rem;
+  top: 1rem;
+  cursor: pointer;
+}
+
+.todo-block h4 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.add-todo {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.add-list {
+  height: 2rem;
+  border: none;
+  outline: none;
+  border-radius: 1rem;
+  width: 100%;
+  padding-left: 1rem;
+  font-size: 1.2rem;
+}
+
+.add-list::placeholder {
+  font-size: 1rem;
+}
+
+.add {
+  background-color: red;
+  padding: 0.5rem;
+  margin-left: -2.8rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.remaining-list-todos {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+}
+
+.list {
+  margin-left: 1rem;
+}
+
+.cut-text {
+  position: relative;
+  width: fit-content;
+}
+
+.cut-text::before,
+.cut-text::after {
+  content: "";
+  position: absolute;
+  top: 40%;
+  width: 50%;
+  height: 4px;
+  background: rgb(134, 5, 5);
+}
+
+.cut-text::before {
+  left: 0;
+}
+
+.cut-text::after {
+  right: 0;
+}
+
+.todo-container {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.todo-block {
+  position: relative;
+  width: 28rem;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Josefin Sans", sans-serif;
+  background: linear-gradient(rgba(148, 42, 42, 0.8), rgba(185, 129, 129, 0.6)),
+    url(Images/bg.jpg) center no-repeat;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-size: cover;
+}
+
+.cut-todo{
+  position: absolute;
+  right: 1rem;
+  top: -1rem;
+  font-size: 4rem;
+  color: rgb(59, 28, 28);
+}
+
+.del-todo{
+  position: absolute;
+  right: 2rem;
+  font-weight: 200;
+  font-size: 2.5rem;
+  color: #fff;
+  margin-top: -1rem;
+}
